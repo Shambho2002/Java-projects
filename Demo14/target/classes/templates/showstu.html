@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table & Grid Layout System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+	     <link
+	    rel="stylesheet"
+	    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+</head>
+<body class="p-5">
+	
+	<!-- navigation start  -->
+	    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="https://www.siu.edu.in/" target="_blank">Symbiosis</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarNav">
+	      <ul class="navbar-nav">
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="./index.html" th:href="@{/}">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="./form.html" th:href="@{/form}">Add Student</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="./update.html" th:href="@{/update}">Update Student</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" aria-disabled="true" href="./delete.html" th:href="@{/delete}">Delete Student</a>
+	        </li>
+			<li class="nav-item">
+			  <a class="nav-link" href="./showstu.html" th:href="@{/showstu}">Student Information</a>
+			</li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	    <!-- navigation end -->
+
+    <!-- Congratulation's You are in the last chapter in this tutorial, You need to understand Last but Not the least as well -->
+
+    <!-- 1] Table tag in bootstrap applying with style as well and with styling color -->
+	
+	<center><h1 class="mt-4 mb-4">Student Details</h1></center>
+	<p th:text="${message}"></p>
+    
+    <table class="table table-border table-hover table-striped table-responsive-sm">
+        <thead class="table-warning">
+            <tr>
+				<th>ID</th>
+                <th>NAME</th>
+                <th>ADDRESS</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="stu : ${student}">
+				<td th:text="${stu.id}"></td>
+                <td th:text="${stu.name}"></td>
+                <td th:text="${stu.address}"></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+</html>
